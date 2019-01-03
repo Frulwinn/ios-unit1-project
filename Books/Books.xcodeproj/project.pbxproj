@@ -8,24 +8,38 @@
 
 /* Begin PBXBuildFile section */
 		48211C0721DD80050023B975 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48211C0621DD80040023B975 /* AppDelegate.swift */; };
-		48211C0921DD80050023B975 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48211C0821DD80050023B975 /* ViewController.swift */; };
+		48211C0921DD80050023B975 /* DetailBookVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48211C0821DD80050023B975 /* DetailBookVC.swift */; };
 		48211C0C21DD80050023B975 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48211C0A21DD80050023B975 /* Main.storyboard */; };
 		48211C0E21DD80070023B975 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 48211C0D21DD80070023B975 /* Assets.xcassets */; };
 		48211C1121DD80070023B975 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48211C0F21DD80070023B975 /* LaunchScreen.storyboard */; };
 		48211C1A21DD8F960023B975 /* Firebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48211C1821DD8F960023B975 /* Firebase.swift */; };
 		48211C1B21DD8F960023B975 /* FirebaseItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48211C1921DD8F960023B975 /* FirebaseItem.swift */; };
+		48211C1F21DD9F390023B975 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48211C1E21DD9F390023B975 /* Model.swift */; };
+		48211C2121DD9F580023B975 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48211C2021DD9F580023B975 /* Book.swift */; };
+		48211C2321DDA0680023B975 /* SearchTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48211C2221DDA0680023B975 /* SearchTVC.swift */; };
+		48211C2521DDA1290023B975 /* BookShelvesTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48211C2421DDA1290023B975 /* BookShelvesTVC.swift */; };
+		48211C2721DDA23D0023B975 /* ReadTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48211C2621DDA23D0023B975 /* ReadTVC.swift */; };
+		48211C2921DDA3600023B975 /* ToReadTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48211C2821DDA3600023B975 /* ToReadTVC.swift */; };
+		48211C2B21DDA3860023B975 /* FavoritesTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48211C2A21DDA3860023B975 /* FavoritesTVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		48211C0321DD80040023B975 /* Books.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Books.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		48211C0621DD80040023B975 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		48211C0821DD80050023B975 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		48211C0821DD80050023B975 /* DetailBookVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailBookVC.swift; sourceTree = "<group>"; };
 		48211C0B21DD80050023B975 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		48211C0D21DD80070023B975 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		48211C1021DD80070023B975 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		48211C1221DD80070023B975 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		48211C1821DD8F960023B975 /* Firebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Firebase.swift; sourceTree = "<group>"; };
 		48211C1921DD8F960023B975 /* FirebaseItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseItem.swift; sourceTree = "<group>"; };
+		48211C1E21DD9F390023B975 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		48211C2021DD9F580023B975 /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
+		48211C2221DDA0680023B975 /* SearchTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTVC.swift; sourceTree = "<group>"; };
+		48211C2421DDA1290023B975 /* BookShelvesTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookShelvesTVC.swift; sourceTree = "<group>"; };
+		48211C2621DDA23D0023B975 /* ReadTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadTVC.swift; sourceTree = "<group>"; };
+		48211C2821DDA3600023B975 /* ToReadTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToReadTVC.swift; sourceTree = "<group>"; };
+		48211C2A21DDA3860023B975 /* FavoritesTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesTVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,15 +73,38 @@
 			isa = PBXGroup;
 			children = (
 				48211C0621DD80040023B975 /* AppDelegate.swift */,
-				48211C0821DD80050023B975 /* ViewController.swift */,
-				48211C0A21DD80050023B975 /* Main.storyboard */,
-				48211C1821DD8F960023B975 /* Firebase.swift */,
-				48211C1921DD8F960023B975 /* FirebaseItem.swift */,
+				48211C1E21DD9F390023B975 /* Model.swift */,
+				48211C2021DD9F580023B975 /* Book.swift */,
+				48211C1D21DD9EE80023B975 /* ViewControllers */,
+				48211C1C21DD9EC40023B975 /* Firebase */,
 				48211C0D21DD80070023B975 /* Assets.xcassets */,
+				48211C0A21DD80050023B975 /* Main.storyboard */,
 				48211C0F21DD80070023B975 /* LaunchScreen.storyboard */,
 				48211C1221DD80070023B975 /* Info.plist */,
 			);
 			path = Books;
+			sourceTree = "<group>";
+		};
+		48211C1C21DD9EC40023B975 /* Firebase */ = {
+			isa = PBXGroup;
+			children = (
+				48211C1821DD8F960023B975 /* Firebase.swift */,
+				48211C1921DD8F960023B975 /* FirebaseItem.swift */,
+			);
+			path = Firebase;
+			sourceTree = "<group>";
+		};
+		48211C1D21DD9EE80023B975 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				48211C2221DDA0680023B975 /* SearchTVC.swift */,
+				48211C0821DD80050023B975 /* DetailBookVC.swift */,
+				48211C2421DDA1290023B975 /* BookShelvesTVC.swift */,
+				48211C2621DDA23D0023B975 /* ReadTVC.swift */,
+				48211C2821DDA3600023B975 /* ToReadTVC.swift */,
+				48211C2A21DDA3860023B975 /* FavoritesTVC.swift */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -141,9 +178,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				48211C2921DDA3600023B975 /* ToReadTVC.swift in Sources */,
+				48211C1F21DD9F390023B975 /* Model.swift in Sources */,
+				48211C2721DDA23D0023B975 /* ReadTVC.swift in Sources */,
+				48211C2B21DDA3860023B975 /* FavoritesTVC.swift in Sources */,
+				48211C2521DDA1290023B975 /* BookShelvesTVC.swift in Sources */,
 				48211C1A21DD8F960023B975 /* Firebase.swift in Sources */,
+				48211C2121DD9F580023B975 /* Book.swift in Sources */,
 				48211C1B21DD8F960023B975 /* FirebaseItem.swift in Sources */,
-				48211C0921DD80050023B975 /* ViewController.swift in Sources */,
+				48211C2321DDA0680023B975 /* SearchTVC.swift in Sources */,
+				48211C0921DD80050023B975 /* DetailBookVC.swift in Sources */,
 				48211C0721DD80050023B975 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
