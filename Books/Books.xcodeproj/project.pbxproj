@@ -73,8 +73,8 @@
 			isa = PBXGroup;
 			children = (
 				48211C0621DD80040023B975 /* AppDelegate.swift */,
-				48211C1E21DD9F390023B975 /* Model.swift */,
 				48211C2021DD9F580023B975 /* Book.swift */,
+				48211C1E21DD9F390023B975 /* Model.swift */,
 				48211C1D21DD9EE80023B975 /* ViewControllers */,
 				48211C1C21DD9EC40023B975 /* Firebase */,
 				48211C0D21DD80070023B975 /* Assets.xcassets */,

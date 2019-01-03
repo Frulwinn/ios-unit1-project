@@ -11,37 +11,38 @@ class Model {
     //URL for api
     private let url = URL(string: "https://www.googleapis.com/books/v1/mylibrary/bookshelves")!
     private let key = "AIzaSyA1ORJpsHhRC6CENB3wnq02Mb62w2KrWao"
+    
     //var
-    var book: Book?
-    var books: [Book] = []
+    var bookItem: BookItem?
+    var bookItems: [BookItem] = []
     
     //count
     func numberOfBooks() -> Int {
-        return books.count
+        return bookItems.count
     }
     
     //access book at index
-    func book(at indexPath: IndexPath) -> Book {
-        return books[indexPath.row]
+    func bookItem(at indexPath: IndexPath) -> BookItem {
+        return bookItems[indexPath.row]
     }
     
     //add
-    func addBook(book: Book) {
-        books.append(book)
+    func addBook(book: BookItem) {
+        bookItems.append(book)
     }
     
     //delete
     func deleteBook(at indexPath: IndexPath) {
-        books.remove(at: indexPath.row)
+        bookItems.remove(at: indexPath.row)
     }
     
     //update
     func updateBook(at indexPath: IndexPath) {
-        let book = books[indexPath.row]
+        let bookItem = bookItems[indexPath.row]
     }
     
     //accessing api process
-    func search(for searchTerm: String, completion: @escaping (Book?, Error?) -> Void ) {
+    func search(for searchTerm: String, completion: @escaping (BookItem?, Error?) -> Void ) {
         
         let requestURL = url.appendingPathComponent(searchTerm)
         
@@ -73,10 +74,10 @@ class Model {
                 let jsonDecoder = JSONDecoder()
                 jsonDecoder.keyDecodingStrategy = .convertFromSnakeCase
                 
-                let book = try jsonDecoder.decode(Book.self, from: data)
-                self.book = book
-                print("\(book)")
-                completion(book, nil)
+                let bookItem = try jsonDecoder.decode(BookItem.self, from: data)
+                self.bookItem = bookItem
+                print("\(bookItem)")
+                completion(bookItem, nil)
                 
             } catch {
                 NSLog("Unable to decode data: \(error)")
