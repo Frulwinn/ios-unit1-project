@@ -12,6 +12,8 @@
 		48211C0C21DD80050023B975 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48211C0A21DD80050023B975 /* Main.storyboard */; };
 		48211C0E21DD80070023B975 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 48211C0D21DD80070023B975 /* Assets.xcassets */; };
 		48211C1121DD80070023B975 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48211C0F21DD80070023B975 /* LaunchScreen.storyboard */; };
+		48211C1A21DD8F960023B975 /* Firebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48211C1821DD8F960023B975 /* Firebase.swift */; };
+		48211C1B21DD8F960023B975 /* FirebaseItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48211C1921DD8F960023B975 /* FirebaseItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		48211C0D21DD80070023B975 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		48211C1021DD80070023B975 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		48211C1221DD80070023B975 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		48211C1821DD8F960023B975 /* Firebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Firebase.swift; sourceTree = "<group>"; };
+		48211C1921DD8F960023B975 /* FirebaseItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +61,8 @@
 				48211C0621DD80040023B975 /* AppDelegate.swift */,
 				48211C0821DD80050023B975 /* ViewController.swift */,
 				48211C0A21DD80050023B975 /* Main.storyboard */,
+				48211C1821DD8F960023B975 /* Firebase.swift */,
+				48211C1921DD8F960023B975 /* FirebaseItem.swift */,
 				48211C0D21DD80070023B975 /* Assets.xcassets */,
 				48211C0F21DD80070023B975 /* LaunchScreen.storyboard */,
 				48211C1221DD80070023B975 /* Info.plist */,
@@ -135,6 +141,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				48211C1A21DD8F960023B975 /* Firebase.swift in Sources */,
+				48211C1B21DD8F960023B975 /* FirebaseItem.swift in Sources */,
 				48211C0921DD80050023B975 /* ViewController.swift in Sources */,
 				48211C0721DD80050023B975 /* AppDelegate.swift in Sources */,
 			);
