@@ -8,8 +8,8 @@ class Model {
     static let shared = Model()
     private init () {}
     
-    //baseURL for api
-    private let baseURL = URL(string: "https://www.googleapis.com/auth/books")!
+    //URL for api
+    private let url = URL(string: "https://www.googleapis.com/books/v1/mylibrary/bookshelves")!
     private let key = "AIzaSyA1ORJpsHhRC6CENB3wnq02Mb62w2KrWao"
     //var
     var book: Book?
@@ -43,10 +43,10 @@ class Model {
     //accessing api process
     func search(for searchTerm: String, completion: @escaping (Book?, Error?) -> Void ) {
         
-        let requestURL = baseURL.appendingPathComponent(searchTerm)
+        let requestURL = url.appendingPathComponent(searchTerm)
         
         //put together a url (for URLRequest) to make a dataTask with
-        var components = URLComponents(url: baseURL, resolvingAgainstBaseURL: true)
+        var components = URLComponents(url: url, resolvingAgainstBaseURL: true)
         
         let clientIDQueryItem = URLQueryItem(name: "API_KEY", value: key)
         let searchQueryItem = URLQueryItem(name: "q", value: searchTerm)

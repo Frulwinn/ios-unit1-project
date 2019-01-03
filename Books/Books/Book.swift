@@ -1,28 +1,23 @@
 import Foundation
 
-struct Book: Codable {
-    let kind: String
+
+struct BookItem: Codable {
+    let items: [Book]
     
-    let title: [VolumeInfo]
-    struct VolumeInfo: Codable {
-        let title: String
-    }
-    
-    let author: [VolumeInfo]
-    struct VolumeInfo: Codable {
-        let volumeInfo: Authors
+    struct Book: Codable {
+        let volumeInfo: VolumeInfo
+
+        struct VolumeInfo: Codable {
+            let title: String
+            let authors: [String]?
+            let imageLinks: ImageLink
         
-        struct Authors: Codable {
-            let authors: String
-        }
-    }
-    
-    let image: [VolumeInfo]
-    struct VolumeInfo: Codable {
-        let volumeInfo: ImageLinks
-        
-        struct ImageLinks: Codable {
-            let imageLinks: String
+            struct ImageLink: Codable {
+                let smallThumbnail: String
+                let thumbnail: String
+            }
         }
     }
 }
+
+
