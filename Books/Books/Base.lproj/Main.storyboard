@@ -246,20 +246,19 @@
                                         </constraints>
                                     </imageView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="aOe-Tc-rU6">
-                                        <rect key="frame" x="165" y="156" width="150" height="44"/>
+                                        <rect key="frame" x="165" y="132" width="150" height="68"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="not read" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Va3-XY-uoB">
-                                                <rect key="frame" x="0.0" y="0.0" width="57" height="18"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="add to bookshelf" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uJ3-cX-XjA">
-                                                <rect key="frame" x="0.0" y="26" width="115" height="18"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3yw-JP-Dvq">
+                                                <rect key="frame" x="0.0" y="0.0" width="57" height="30"/>
+                                                <state key="normal" title="not read"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cNc-sz-1qE">
+                                                <rect key="frame" x="0.0" y="38" width="150" height="30"/>
+                                                <state key="normal" title="add to read bookshelf"/>
+                                                <connections>
+                                                    <action selector="addToRead:" destination="BYZ-38-t0r" eventType="touchUpInside" id="A3v-aF-bI7"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                     </stackView>
                                 </subviews>
@@ -280,8 +279,19 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="Title" id="d10-Qt-EpY">
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="LBN-Lx-f4A"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="LBN-Lx-f4A">
+                            <connections>
+                                <action selector="saveButton:" destination="BYZ-38-t0r" id="JeE-MS-9QB"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="authorLabel" destination="zk1-l6-tT8" id="jzC-Wc-SDN"/>
+                        <outlet property="imageLinksView" destination="kn0-4t-yh1" id="gEH-gz-6yS"/>
+                        <outlet property="notReadButton" destination="3yw-JP-Dvq" id="Xx9-d8-xAy"/>
+                        <outlet property="reviewTextView" destination="0vp-zV-XYc" id="10D-PQ-t0G"/>
+                        <outlet property="titleLabel" destination="juG-Ud-16n" id="8N0-gE-b62"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
