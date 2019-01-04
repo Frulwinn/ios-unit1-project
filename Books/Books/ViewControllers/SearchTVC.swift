@@ -4,9 +4,17 @@ class SearchTVC: UITableViewController, UISearchBarDelegate {
     
     @IBOutlet weak var searchBar: UISearchBar!
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        searchBar.delegate = self
+        tableView.reloadData()
+    }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
         guard let searchTerm = searchBar.text, !searchTerm.isEmpty else { return }
+        
+        searchBar.text = ""
         
         Model.shared.search(for: searchTerm) { (bookItem, error) in
             DispatchQueue.main.async {
