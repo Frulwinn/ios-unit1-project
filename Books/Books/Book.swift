@@ -2,7 +2,6 @@ import Foundation
 
 
 struct BookItem: Codable {
-//    var isRead: Bool = false
     
     let items: [Book]
     
@@ -12,7 +11,7 @@ struct BookItem: Codable {
         struct VolumeInfo: Codable {
             let title: String
             let authors: [String]?
-            let imageLinks: ImageLink
+            let imageLinks: ImageLink?
         
             struct ImageLink: Codable {
                 let smallThumbnail: String

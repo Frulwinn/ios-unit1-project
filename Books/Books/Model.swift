@@ -8,10 +8,6 @@ class Model {
     static let shared = Model()
     private init () {}
     
-    //URL for api
-    private let url = URL(string: "https://www.googleapis.com/books/v1/mylibrary/bookshelves")!
-    private let key = "AIzaSyA1ORJpsHhRC6CENB3wnq02Mb62w2KrWao"
-    
     //var
     var bookItem: BookItem?
     var bookItems: [BookItem] = []
@@ -38,7 +34,7 @@ class Model {
     
     //update
     func updateBook(at indexPath: IndexPath) {
-        let bookItem = bookItems[indexPath.row]
+        let _ = bookItems[indexPath.row]
     }
     
     //allow my button to change
@@ -46,18 +42,27 @@ class Model {
 //        bookItem?.isRead = bookItem!.isRead
 //    }
     
+    //URL for api
+    private let url = URL(string: "https://www.googleapis.com/books/v1/volumes")!
+//    private let key = "AIzaSyA1ORJpsHhRC6CENB3wnq02Mb62w2KrWao"
+    
     //accessing api process
     func search(for searchTerm: String, completion: @escaping (BookItem?, Error?) -> Void ) {
         
-        let requestURL = url.appendingPathComponent(searchTerm)
+    
         
         //put together a url (for URLRequest) to make a dataTask with
         var components = URLComponents(url: url, resolvingAgainstBaseURL: true)
         
-        let clientIDQueryItem = URLQueryItem(name: "API_KEY", value: key)
-        let searchQueryItem = URLQueryItem(name: "q", value: searchTerm)
-        components?.queryItems = [clientIDQueryItem, searchQueryItem]
+//        let clientIDQueryItem = URLQueryItem(name: "API_KEY", value: key)
+        let searchQueryItem = URLQueryItem(name: "q", value: "\(searchTerm)+terms")
+        components?.queryItems = [searchQueryItem]
         
+        guard let requestURL = components?.url else {
+            NSLog("Error requesting Url with \(searchTerm)")
+            completion(nil, NSError())
+            return
+        }
         //create get request
         var request = URLRequest(url: requestURL)
         request.httpMethod = "GET"
@@ -77,7 +82,7 @@ class Model {
             
             do {
                 let jsonDecoder = JSONDecoder()
-                jsonDecoder.keyDecodingStrategy = .convertFromSnakeCase
+            
                 
                 let bookItem = try jsonDecoder.decode(BookItem.self, from: data)
                 self.bookItem = bookItem
