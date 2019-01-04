@@ -34,9 +34,10 @@ class SearchTVC: UITableViewController, UISearchBarDelegate {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "searchCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "bookCell", for: indexPath)
 
-        let searchResult = Model.shared.bookItem(at: indexPath)
+        //let searchResult = Model.shared.bookItem(at: indexPath)
+        let searchResult = Model.shared.bookItems[indexPath.row]
         cell.textLabel?.text = searchResult.items[0].volumeInfo.title
 
         return cell

@@ -1,6 +1,4 @@
 import Foundation
-//key=API_KEY
-//api key AIzaSyA1ORJpsHhRC6CENB3wnq02Mb62w2KrWao
 
 class Model {
     
@@ -23,28 +21,47 @@ class Model {
     }
     
     //add
-    func addBook(book: BookItem) {
-        bookItems.append(book)
+    func add(bookItem: BookItem, completion: @escaping () -> Void) {
+        bookItems.append(bookItem)
+        
+        Firebase<BookItem>.save(item: bookItem) { success in
+            guard success else { return }
+            DispatchQueue.main.async { completion() }
+        }
     }
     
     //delete
-    func deleteBook(at indexPath: IndexPath) {
+    func deleteBook(at indexPath: IndexPath, completion: @escaping () -> Void) {
+        let bookItem = bookItems[indexPath.row]
+        //in local model
         bookItems.remove(at: indexPath.row)
+        
+        //in firebase
+        Firebase<BookItem>.delete(item: bookItem) { success in
+            guard success else { return }
+            DispatchQueue.main.async { completion() }
+        }
     }
     
     //update
-    func updateBook(at indexPath: IndexPath) {
-        let _ = bookItems[indexPath.row]
+    func updateBook(for bookItem: BookItem, completion: @escaping () -> Void) {
+        //in local model
+        //let bookItem = bookItems[indexPath.row]
+        
+        //in firebase
+        Firebase<BookItem>.save(item: bookItem) { success in
+            guard success else { return }
+            DispatchQueue.main.async { completion() }
+        }
     }
     
     //allow my button to change
-//    func tappedIsRead(for book: BookItem) {
-//        bookItem?.isRead = bookItem!.isRead
-//    }
+    func tappedIsRead(for book: BookItem) {
+        bookItem?.isRead = !bookItem!.isRead
+    }
     
     //URL for api
     private let url = URL(string: "https://www.googleapis.com/books/v1/volumes")!
-//    private let key = "AIzaSyA1ORJpsHhRC6CENB3wnq02Mb62w2KrWao"
     
     //accessing api process
     func search(for searchTerm: String, completion: @escaping (BookItem?, Error?) -> Void ) {

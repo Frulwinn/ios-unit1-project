@@ -1,23 +1,31 @@
 import Foundation
 
 
-struct BookItem: Codable {
+class BookItem: Codable, FirebaseItem {
     
-    let items: [Book]
+    var items: [Book]
+    var recordIdentifier = ""
+    var isRead : Bool = false
     
     struct Book: Codable {
-        let volumeInfo: VolumeInfo
+        var volumeInfo: VolumeInfo
 
         struct VolumeInfo: Codable {
-            let title: String
-            let authors: [String]?
-            let imageLinks: ImageLink?
+            var title: String
+            var authors: String //[String]?
+            var imageLinks: ImageLink
         
             struct ImageLink: Codable {
-                let smallThumbnail: String
-                let thumbnail: String
+                var smallThumbnail: String
+                var thumbnail: String
             }
         }
+    }
+    //need to initialize since class
+    init(title: String, authors: String, thumbnail: String) {
+        self.items[0].volumeInfo.title = title
+        self.items[0].volumeInfo.authors = authors
+        self.items[0].volumeInfo.imageLinks.thumbnail = thumbnail
     }
 }
 
