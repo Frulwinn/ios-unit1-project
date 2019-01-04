@@ -10,8 +10,8 @@ class SearchTVC: UITableViewController, UISearchBarDelegate {
         super.viewWillAppear(animated)
         
         Firebase<BookItem>.fetchRecords { persons in
-            if let bookItems = bookItems {
-                Model.shared.bookItems = bookItems
+            if let bookItem = self.bookItem {
+                Model.shared.bookItem = bookItem
                 
                 DispatchQueue.main.async {
                     self.tableView.reloadData()
@@ -50,9 +50,8 @@ class SearchTVC: UITableViewController, UISearchBarDelegate {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "bookCell", for: indexPath)
 
-        //let searchResult = Model.shared.bookItem(at: indexPath)
-        let searchResult = Model.shared.bookItems[indexPath.row]
-        cell.textLabel?.text = searchResult.items[0].volumeInfo.title
+        let bookItem = Model.shared.bookItem(at: indexPath)
+        cell.textLabel?.text = bookItem.items[0].volumeInfo.title
 
         return cell
     }

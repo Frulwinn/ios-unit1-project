@@ -20,9 +20,39 @@ class Model {
         return bookItems[indexPath.row]
     }
     
+    //init() { loadData() }
+    
+    let fileURL = URL(fileURLWithPath: NSHomeDirectory())
+        .appendingPathComponent("Documents")
+        .appendingPathComponent("bookItems.json")
+    
+    // save
+    func saveData(){
+        let encoder = JSONEncoder()
+        do {
+            let encodedbookItems = try encoder.encode(bookItems)
+            try encodedbookItems.write(to: url)
+        } catch {
+            print("Error: \(error)")
+        }
+    }
+    
+    // create load
+    func loadData() {
+        do {
+            let decoder = JSONDecoder()
+            let bookItemsData = try Data(contentsOf: url)
+            let decodedBookItems = try decoder.decode([BookItem].self, from: bookItemsData)
+            bookItems = decodedBookItems
+        } catch {
+            print("Error: \(error)")
+        }
+    }
+    
     //add
     func add(bookItem: BookItem, completion: @escaping () -> Void) {
         bookItems.append(bookItem)
+        saveData()
         
         Firebase<BookItem>.save(item: bookItem) { success in
             guard success else { return }
@@ -35,6 +65,7 @@ class Model {
         let bookItem = bookItems[indexPath.row]
         //in local model
         bookItems.remove(at: indexPath.row)
+        saveData()
         
         //in firebase
         Firebase<BookItem>.delete(item: bookItem) { success in
@@ -46,7 +77,9 @@ class Model {
     //update
     func updateBook(for bookItem: BookItem, completion: @escaping () -> Void) {
         //in local model
-        //let bookItem = bookItems[indexPath.row]
+        let bookItem = bookItems.remove(at: indexPath.row)
+        bookItems.insert(bookItem, at: bookItem)
+        saveData()
         
         //in firebase
         Firebase<BookItem>.save(item: bookItem) { success in

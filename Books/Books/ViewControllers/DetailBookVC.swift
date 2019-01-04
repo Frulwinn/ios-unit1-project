@@ -10,8 +10,8 @@ class DetailBookVC: UIViewController {
     @IBOutlet weak var reviewTextView: UITextView!
     @IBOutlet weak var notReadButton: UIButton!
     @IBAction func addToRead(_ sender: Any) {
-        guard let bookItem = bookItem else { return }
-        Model.shared.addBook(book: bookItem)
+        //guard let bookItem = bookItem else { return }
+        //Model.shared.addBook(book: bookItem)
     }
     
     @IBAction func saveButton(_ sender: Any) {
@@ -26,20 +26,20 @@ class DetailBookVC: UIViewController {
         navigationItem.title = bookItem.items[0].volumeInfo.title
 
         titleLabel.text = bookItem.items[0].volumeInfo.title
-//        authorLabel.text = bookItem.Book.VolumeInfo.author
-//
-//        guard let url = URL(string: bookItem.Book.VolumeInfo.thumbnail),
-//            let imageData = try? Data(contentsOf: url) else { return }
+        authorLabel.text = bookItem.items[0].volumeInfo.authors
+
+        guard let url = URL(string: bookItem.items[0].volumeInfo.imageLinks.thumbnail),
+            let imageData = try? Data(contentsOf: url) else { return }
         
-//        imageLinksView.image = UIImage(data: imageData)
+        imageLinksView.image = UIImage(data: imageData)
         
-//        var newButtonTitle: String
-//        if bookItem.isRead {
-//            newButtonTitle = "Read"
-//        } else {
-//            newButtonTitle = "Not Read"
-//        }
-//            self.notReadButton.setTitle(newButtonTitle, for: .normal)
+        var newButtonTitle: String
+        if bookItem.isRead {
+            newButtonTitle = "Read"
+        } else {
+            newButtonTitle = "Not Read"
+        }
+            self.notReadButton.setTitle(newButtonTitle, for: .normal)
         }
 
 }
