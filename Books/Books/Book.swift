@@ -3,9 +3,10 @@ import Foundation
 
 class BookItem: Codable, FirebaseItem {
     
-    var items: [Book]
     var recordIdentifier = ""
     var isRead : Bool = false
+    
+    var items: [Book]
     
     struct Book: Codable {
         var volumeInfo: VolumeInfo
