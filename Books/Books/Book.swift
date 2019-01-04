@@ -2,6 +2,8 @@ import Foundation
 
 
 struct BookItem: Codable {
+//    var isRead: Bool = false
+    
     let items: [Book]
     
     struct Book: Codable {

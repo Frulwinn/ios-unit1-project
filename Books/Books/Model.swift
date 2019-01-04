@@ -41,6 +41,11 @@ class Model {
         let bookItem = bookItems[indexPath.row]
     }
     
+    //allow my button to change
+//    func tappedIsRead(for book: BookItem) {
+//        bookItem?.isRead = bookItem!.isRead
+//    }
+    
     //accessing api process
     func search(for searchTerm: String, completion: @escaping (BookItem?, Error?) -> Void ) {
         

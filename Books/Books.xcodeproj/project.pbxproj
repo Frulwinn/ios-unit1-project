@@ -18,9 +18,6 @@
 		48211C2121DD9F580023B975 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48211C2021DD9F580023B975 /* Book.swift */; };
 		48211C2321DDA0680023B975 /* SearchTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48211C2221DDA0680023B975 /* SearchTVC.swift */; };
 		48211C2521DDA1290023B975 /* BookShelvesTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48211C2421DDA1290023B975 /* BookShelvesTVC.swift */; };
-		48211C2721DDA23D0023B975 /* ReadTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48211C2621DDA23D0023B975 /* ReadTVC.swift */; };
-		48211C2921DDA3600023B975 /* ToReadTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48211C2821DDA3600023B975 /* ToReadTVC.swift */; };
-		48211C2B21DDA3860023B975 /* FavoritesTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48211C2A21DDA3860023B975 /* FavoritesTVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,9 +34,6 @@
 		48211C2021DD9F580023B975 /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 		48211C2221DDA0680023B975 /* SearchTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTVC.swift; sourceTree = "<group>"; };
 		48211C2421DDA1290023B975 /* BookShelvesTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookShelvesTVC.swift; sourceTree = "<group>"; };
-		48211C2621DDA23D0023B975 /* ReadTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadTVC.swift; sourceTree = "<group>"; };
-		48211C2821DDA3600023B975 /* ToReadTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToReadTVC.swift; sourceTree = "<group>"; };
-		48211C2A21DDA3860023B975 /* FavoritesTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesTVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,9 +94,6 @@
 				48211C2221DDA0680023B975 /* SearchTVC.swift */,
 				48211C0821DD80050023B975 /* DetailBookVC.swift */,
 				48211C2421DDA1290023B975 /* BookShelvesTVC.swift */,
-				48211C2621DDA23D0023B975 /* ReadTVC.swift */,
-				48211C2821DDA3600023B975 /* ToReadTVC.swift */,
-				48211C2A21DDA3860023B975 /* FavoritesTVC.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -178,10 +169,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				48211C2921DDA3600023B975 /* ToReadTVC.swift in Sources */,
 				48211C1F21DD9F390023B975 /* Model.swift in Sources */,
-				48211C2721DDA23D0023B975 /* ReadTVC.swift in Sources */,
-				48211C2B21DDA3860023B975 /* FavoritesTVC.swift in Sources */,
 				48211C2521DDA1290023B975 /* BookShelvesTVC.swift in Sources */,
 				48211C1A21DD8F960023B975 /* Firebase.swift in Sources */,
 				48211C2121DD9F580023B975 /* Book.swift in Sources */,

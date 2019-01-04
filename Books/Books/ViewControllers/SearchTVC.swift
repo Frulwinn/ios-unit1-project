@@ -2,6 +2,8 @@ import UIKit
 
 class SearchTVC: UITableViewController, UISearchBarDelegate {
     
+    var bookItem: BookItem?
+    
     @IBOutlet weak var searchBar: UISearchBar!
     
     override func viewDidLoad() {
@@ -17,8 +19,11 @@ class SearchTVC: UITableViewController, UISearchBarDelegate {
         searchBar.text = ""
         
         Model.shared.search(for: searchTerm) { (bookItem, error) in
-            DispatchQueue.main.async {
-                self.tableView.reloadData()
+            if let bookItem = bookItem, error == nil {
+                self.bookItem = bookItem
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                }
             }
         }
     }
@@ -32,13 +37,12 @@ class SearchTVC: UITableViewController, UISearchBarDelegate {
         let cell = tableView.dequeueReusableCell(withIdentifier: "searchCell", for: indexPath)
 
         let searchResult = Model.shared.bookItems[indexPath.row]
-        cell.textLabel?.text = BookItem.Book.VolumeInfo.title
+      //  cell.textLabel?.text = BookItem.Book.VolumeInfo.title
 
         return cell
     }
 
     // MARK: - Navigation
-
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let destination = segue.destination as? DetailBookVC,
             let indexPath = tableView.indexPathForSelectedRow else { return }
