@@ -28,11 +28,12 @@ class BookShelvesTVC: UITableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
         case 0:
-            return
+            return Model.shared.booksRead.count
         case 1:
-            return
+            return Model.shared.booksToRead.count
         default:
-            Model.shared.bookItems.count
+            fatalError("Illegal section")
+            }
         }
     }
 
