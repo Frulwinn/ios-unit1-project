@@ -32,8 +32,14 @@ class Model {
         return bookItems[indexPath.row]
     }
     
-    //init() { loadData() }
+    // move books
+    func move(at index: Int, to newIndex: Int){
+        let bookItem = bookItems.remove(at: index)
+        bookItems.insert(bookItem, at: newIndex)
+        saveData()
+    }
     
+    //persistence
     let fileURL = URL(fileURLWithPath: NSHomeDirectory())
         .appendingPathComponent("Documents")
         .appendingPathComponent("bookItems.json")
