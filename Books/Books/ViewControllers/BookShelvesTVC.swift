@@ -1,21 +1,39 @@
 import UIKit
 
 class BookShelvesTVC: UITableViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
+    
+    var bookItem: BookItem?
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        Firebase<BookItem>.fetchRecords { persons in
+            if let bookItem = self.bookItem {
+                Model.shared.bookItem = bookItem
+                
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                    
+                }
+            }
+        }
     }
 
     // MARK: - Table view data source
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 3
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        switch section {
+        case 0:
+            return
+        case 1:
+            return
+        default:
+            Model.shared.bookItems.count
+        }
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

@@ -24,7 +24,7 @@ class BookItem: Codable, FirebaseItem {
     }
     //need to initialize since class
     init(items: String, title: String, authors: String, thumbnail: String, isRead: Bool = false, recordIdentifier: String) {
-        self.items[0] = items
+        self.items[0] = items.join(Array)
         self.items[0].volumeInfo.title = title
         self.items[0].volumeInfo.authors = authors
         self.items[0].volumeInfo.imageLinks.thumbnail = thumbnail

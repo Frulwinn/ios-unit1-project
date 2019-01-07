@@ -9,10 +9,22 @@ class Model {
     //var
     var bookItem: BookItem?
     var bookItems: [BookItem] = []
+    var booksRead: [BookItem] = []
+    var booksToRead: [BookItem] = []
     
     //count
     func numberOfBooks() -> Int {
         return bookItems.count
+    }
+    
+    //books read
+    func numberOfBooksRead() -> Int {
+        return booksRead.count
+    }
+    
+    //books to read
+    func numberOfBooksToRead() -> Int {
+        return booksToRead.count
     }
     
     //access book at index
@@ -77,8 +89,9 @@ class Model {
     //update
     func updateBook(for bookItem: BookItem, completion: @escaping () -> Void) {
         //in local model
-        let bookItem = bookItems.remove(at: indexPath.row)
-        bookItems.insert(bookItem, at: bookItem)
+        // FIX THIS!!!
+       // let bookItem = bookItems.remove(at: bookItem)
+       // bookItems.insert(bookItem, at: bookItem)
         saveData()
         
         //in firebase
@@ -99,12 +112,9 @@ class Model {
     //accessing api process
     func search(for searchTerm: String, completion: @escaping (BookItem?, Error?) -> Void ) {
         
-    
-        
         //put together a url (for URLRequest) to make a dataTask with
         var components = URLComponents(url: url, resolvingAgainstBaseURL: true)
         
-//        let clientIDQueryItem = URLQueryItem(name: "API_KEY", value: key)
         let searchQueryItem = URLQueryItem(name: "q", value: "\(searchTerm)+terms")
         components?.queryItems = [searchQueryItem]
         
@@ -132,7 +142,6 @@ class Model {
             
             do {
                 let jsonDecoder = JSONDecoder()
-            
                 
                 let bookItem = try jsonDecoder.decode(BookItem.self, from: data)
                 self.bookItem = bookItem
